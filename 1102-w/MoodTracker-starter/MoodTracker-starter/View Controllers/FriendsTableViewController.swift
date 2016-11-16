@@ -16,8 +16,8 @@ class FriendsTableViewController: UITableViewController {
     
     var friendArray = [
         Friend(name: "John", mood: .happy),
-        Friend(name: "Jack", mood: .happy),
-        Friend(name: "Sarah", mood: .happy),
+        Friend(name: "Jack", mood: .angry),
+        Friend(name: "Sarah", mood: .medium),
         Friend(name: "Jenny", mood: .happy)
     ]
     
@@ -87,6 +87,12 @@ class FriendsTableViewController: UITableViewController {
         }
         let friend = Friend(name: name, mood: mood)
         friendArray.append(friend)
+        tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let addFriendViewController = segue.destination as! AddFriendViewController
+        addFriendViewController.friendTableViewController = self
     }
     
     private func nextMood(mood: Mood) -> Mood {
