@@ -9,11 +9,31 @@
 import UIKit
 
 class FriendTableViewCell: UITableViewCell {
+    
+    var friendTableViewController: FriendsTableViewController!
   
-  var friend: Friend? // stores the friend that is displayed in this cell
-  
+    
+    
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var moodButton: UIButton!
+    
+    @IBOutlet weak var moodDescription: UILabel!
+    
+    // stores the friend that is displayed in this cell
+    var friend: Friend? {
+        didSet {
+            nameLabel.text = friend?.name
+            moodButton.setTitle(friend?.mood.rawValue, for: .normal)
+        }
+    }
+    
   @IBAction func moodButtonPressed(_ sender: UIButton) {
     print(#line, #function)
+    friend = friendTableViewController.friendArray[sender.tag]
+    friendTableViewController.updateMood(friend: friend!)
+    
   }
 
 
