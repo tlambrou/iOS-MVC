@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol FriendTableViewCellDelegate {
+  func updateFriend(friend: Friend)
+}
+
 class FriendTableViewCell: UITableViewCell {
   
-  var moodTableViewController: MoodTableViewController!
+//  var moodTableViewController: MoodTableViewController!
+  var delegate: FriendTableViewCellDelegate!
   
   // outlets
   @IBOutlet weak var nameLabel: UILabel!
@@ -38,7 +43,8 @@ class FriendTableViewCell: UITableViewCell {
   
   // update mood and label
   @IBAction func moodButtonPressed(_ sender: AnyObject) {
-    moodTableViewController.updateFriend(friend: friend) // sendf friend to MoodTableViewController
+//    moodTableViewController.updateFriend(friend: friend) // send friend to MoodTableViewController
+    delegate.updateFriend(friend: friend)
   }
 
   

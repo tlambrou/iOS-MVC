@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PickerViewController: UIViewController {
+class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
   
   @IBOutlet weak var pickerView: UIPickerView!
   @IBOutlet weak var cityLabel: UILabel!
@@ -17,6 +17,25 @@ class PickerViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    pickerView.delegate = self
   }
+  
+  func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    return 1
+  }
+  
+  func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    return cities.count
+  }
+  
+  func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    cityLabel.text = cities[row]
+  }
+  
+  func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    return cities[row]
+  }
+  
+  
   
 }
