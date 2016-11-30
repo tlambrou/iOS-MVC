@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D4522F3C2D1A690C5E54D2A979D84A8BAE9F09B8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "1053529095D689E757B31A712D38F943F2F8EFAF" : 9223372036854775807,
+    "D4522F3C2D1A690C5E54D2A979D84A8BAE9F09B8" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A77D157B-394C-41F3-B5DB-FE389E495CE6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "1053529095D689E757B31A712D38F943F2F8EFAF" : "..\/..",
+    "D4522F3C2D1A690C5E54D2A979D84A8BAE9F09B8" : "iOS-MVC\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MoodTracker",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "1118-f\/MoodTracker-delegates-starter\/MoodTracker.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/tlambrou\/nb-question.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1053529095D689E757B31A712D38F943F2F8EFAF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/tlambrou\/iOS-MVC.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D4522F3C2D1A690C5E54D2A979D84A8BAE9F09B8"
+    }
+  ]
+}

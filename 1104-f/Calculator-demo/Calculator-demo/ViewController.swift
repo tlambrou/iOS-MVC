@@ -30,7 +30,7 @@ class ViewController: UIViewController {
       operationLabel.text = calculator.sign(for: operation)
     }
     else {
-      print("no operation for idnex: \(sender.selectedSegmentIndex)")
+      print("no operation for index: \(sender.selectedSegmentIndex)")
     }
   }
 
