@@ -211,21 +211,22 @@ class ViewController: UIViewController {
       
     case .addition:
       
-      calcWindow.text = String(calculation.add(a: calculation.a, b: calculation.b).cleanValue)
+      calcWindow.text = String(calculation.add(a: calculation.a!, b: calculation.b!).cleanValue)
       
     case .subtraction:
       
-      calcWindow.text = String(calculation.subtract(a: calculation.a, b: calculation.b).cleanValue)
+      calcWindow.text = String(calculation.subtract(a: calculation.a!, b: calculation.b!).cleanValue)
       
     case .multiplication:
       
-      calcWindow.text = String(calculation.multiply(a: calculation.a, b: calculation.b).cleanValue)
+      calcWindow.text = String(calculation.multiply(a: calculation.a!, b: calculation.b!).cleanValue)
       
     case .division:
       
-      calcWindow.text = String(calculation.divide(a: calculation.a, b: calculation.b).cleanValue)
+      calcWindow.text = String(calculation.divide(a: calculation.a!, b: calculation.b!).cleanValue)
       
     }
+    
     
     numberClears = true
     calculationArray.append(calculation)
@@ -234,7 +235,7 @@ class ViewController: UIViewController {
   
   @IBAction func calculationsLogButtonPressed(_ sender: UIButton) {
     
-      performSegue(withIdentifier: "moveToCalculationsLog", sender: UIButton())
+      performSegue(withIdentifier: "calcLog", sender: UIButton())
   }
   
   

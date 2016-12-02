@@ -11,8 +11,8 @@ import Foundation
 
 class Calculator {
   
-  var a: Float = 0
-  var b: Float = 0
+  var a: Float? = 0
+  var b: Float? = 0
   var sign: Operation?
   var result: Float!
   
@@ -35,7 +35,7 @@ class Calculator {
   }
   
   func printCalculation() -> String {
-    let expression: String = "\(self.a) \(sign) \(self.b) = \(self.result)"
+    let expression: String = "\(self.a!) \(sign!) \(self.b!) = \(self.result)"
     return expression
   }
   

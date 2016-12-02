@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,196 +22,212 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQJ-Oh-3Wz">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sQJ-Oh-3Wz">
                                 <rect key="frame" x="0.0" y="80" width="375" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.31524590120000001" green="0.8139583333" blue="0.50203162359999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Calculations" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PlG-s4-pvG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculations" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PlG-s4-pvG">
                                 <rect key="frame" x="16" y="80" width="343" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Tuk-fm-FW8"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="oU1-po-SXX"/>
+                                    <constraint firstAttribute="width" constant="343" id="vhW-pG-zoL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="kmM-Px-dg2" userLabel="123">
-                                <rect key="frame" x="45" y="175" width="286" height="108"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBd-ny-Puo">
-                                        <rect key="frame" x="0.0" y="0.0" width="49" height="108"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                        <state key="normal" title="1"/>
-                                        <connections>
-                                            <action selector="oneButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w0A-Zg-Eqa"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69e-Qd-w2s">
-                                        <rect key="frame" x="79" y="0.0" width="49" height="108"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                        <state key="normal" title="2"/>
-                                        <connections>
-                                            <action selector="twoButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8yn-4F-FmW"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUY-3r-UnX">
-                                        <rect key="frame" x="158" y="0.0" width="49" height="108"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                        <state key="normal" title="3"/>
-                                        <connections>
-                                            <action selector="threeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IiG-Zq-dbi"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYK-Kn-4mJ" userLabel="Divide Button">
-                                        <rect key="frame" x="237" y="0.0" width="49" height="108"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                        <state key="normal" title="÷"/>
-                                        <connections>
-                                            <action selector="divideButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="why-IF-035"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="k8H-m0-oOf" userLabel="456">
-                                <rect key="frame" x="43" y="250" width="286" height="108"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwi-wW-61v">
-                                        <rect key="frame" x="0.0" y="0.0" width="49" height="108"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                        <state key="normal" title="4"/>
-                                        <connections>
-                                            <action selector="fourButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EDH-5o-Iko"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRh-t5-RAL">
-                                        <rect key="frame" x="79" y="0.0" width="49" height="108"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                        <state key="normal" title="5"/>
-                                        <connections>
-                                            <action selector="fiveButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fj2-UI-cch"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cvh-1J-HCJ">
-                                        <rect key="frame" x="158" y="0.0" width="49" height="108"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                        <state key="normal" title="6"/>
-                                        <connections>
-                                            <action selector="sixButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IZZ-E4-LWO"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BhC-oU-U4E">
-                                        <rect key="frame" x="237" y="0.0" width="49" height="108"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                        <state key="normal" title="x"/>
-                                        <connections>
-                                            <action selector="multiplyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LGU-0U-43I"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="sff-7k-egx" userLabel="789">
-                                <rect key="frame" x="43" y="325" width="282" height="108"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VdQ-aJ-lfe">
-                                        <rect key="frame" x="0.0" y="0.0" width="48" height="108"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                        <state key="normal" title="7"/>
-                                        <connections>
-                                            <action selector="sevenButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E7e-hU-OX4"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YnL-Il-Wgh">
-                                        <rect key="frame" x="78" y="0.0" width="48" height="108"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                        <state key="normal" title="8"/>
-                                        <connections>
-                                            <action selector="eightButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nl5-FV-6Xh"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGd-HE-WHP">
-                                        <rect key="frame" x="156" y="0.0" width="48" height="108"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                        <state key="normal" title="9"/>
-                                        <connections>
-                                            <action selector="nineButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pzm-tr-8QR"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1D-cc-guI">
-                                        <rect key="frame" x="234" y="0.0" width="48" height="108"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                        <state key="normal" title="-"/>
-                                        <connections>
-                                            <action selector="subtractButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JGe-bi-N4D"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zj7-B2-8c5" userLabel="0.=">
-                                <rect key="frame" x="43" y="395" width="280" height="108"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWt-r7-BCE">
-                                        <rect key="frame" x="0.0" y="0.0" width="49" height="108"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                        <state key="normal" title="0"/>
-                                        <connections>
-                                            <action selector="zeroButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NgM-gJ-jDs"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPX-SI-l2I">
-                                        <rect key="frame" x="77" y="0.0" width="49" height="108"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                        <state key="normal" title="."/>
-                                        <connections>
-                                            <action selector="decimalButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P9V-KK-3u3"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ypb-4B-NPk" userLabel="Equal Button">
-                                        <rect key="frame" x="154" y="0.0" width="49" height="108"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                        <state key="normal" title="="/>
-                                        <connections>
-                                            <action selector="equalButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6wY-4S-tYf"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irK-vn-Ytf">
-                                        <rect key="frame" x="231" y="0.0" width="49" height="108"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                        <state key="normal" title="+"/>
-                                        <connections>
-                                            <action selector="additionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FEq-gA-HOf"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="equalCentering" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="jAl-yv-xzd">
-                                <rect key="frame" x="361" y="434" width="49" height="108"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53D-9a-VxK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53D-9a-VxK">
                                 <rect key="frame" x="275" y="493" width="53" height="108"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="108" id="aAi-3H-hDn"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="AC"/>
                                 <connections>
                                     <action selector="clearButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g6f-rP-2VA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8OU-BW-C5m">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8OU-BW-C5m">
                                 <rect key="frame" x="40" y="535" width="217" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="217" id="Adz-Mm-J5u"/>
+                                </constraints>
                                 <state key="normal" title="See All Calculations"/>
                                 <connections>
                                     <action selector="calculationsLogButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rqd-z0-EZ2"/>
                                     <segue destination="2M7-v9-jDm" kind="showDetail" identifier="calcLog" action="showViewController:sender:" id="kHE-Om-Iwy"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="jAl-yv-xzd">
+                                <rect key="frame" x="44" y="147" width="286" height="372"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="kmM-Px-dg2" userLabel="123">
+                                        <rect key="frame" x="0.0" y="0.0" width="286" height="108"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBd-ny-Puo">
+                                                <rect key="frame" x="0.0" y="0.0" width="49" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="1"/>
+                                                <connections>
+                                                    <action selector="oneButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w0A-Zg-Eqa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69e-Qd-w2s">
+                                                <rect key="frame" x="79" y="0.0" width="49" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="2"/>
+                                                <connections>
+                                                    <action selector="twoButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8yn-4F-FmW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUY-3r-UnX">
+                                                <rect key="frame" x="158" y="0.0" width="49" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="3"/>
+                                                <connections>
+                                                    <action selector="threeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IiG-Zq-dbi"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYK-Kn-4mJ" userLabel="Divide Button">
+                                                <rect key="frame" x="237" y="0.0" width="49" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="÷"/>
+                                                <connections>
+                                                    <action selector="divideButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="why-IF-035"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="k8H-m0-oOf" userLabel="456">
+                                        <rect key="frame" x="0.0" y="88" width="286" height="108"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwi-wW-61v">
+                                                <rect key="frame" x="0.0" y="0.0" width="49" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="4"/>
+                                                <connections>
+                                                    <action selector="fourButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EDH-5o-Iko"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRh-t5-RAL">
+                                                <rect key="frame" x="79" y="0.0" width="49" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="5"/>
+                                                <connections>
+                                                    <action selector="fiveButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fj2-UI-cch"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cvh-1J-HCJ">
+                                                <rect key="frame" x="158" y="0.0" width="49" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="6"/>
+                                                <connections>
+                                                    <action selector="sixButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IZZ-E4-LWO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BhC-oU-U4E">
+                                                <rect key="frame" x="237" y="0.0" width="49" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="x"/>
+                                                <connections>
+                                                    <action selector="multiplyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LGU-0U-43I"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="sff-7k-egx" userLabel="789">
+                                        <rect key="frame" x="0.0" y="176" width="286" height="108"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VdQ-aJ-lfe">
+                                                <rect key="frame" x="0.0" y="0.0" width="49" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="7"/>
+                                                <connections>
+                                                    <action selector="sevenButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E7e-hU-OX4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YnL-Il-Wgh">
+                                                <rect key="frame" x="79" y="0.0" width="49" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="8"/>
+                                                <connections>
+                                                    <action selector="eightButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nl5-FV-6Xh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGd-HE-WHP">
+                                                <rect key="frame" x="158" y="0.0" width="49" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="9"/>
+                                                <connections>
+                                                    <action selector="nineButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pzm-tr-8QR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1D-cc-guI">
+                                                <rect key="frame" x="237" y="0.0" width="49" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="-"/>
+                                                <connections>
+                                                    <action selector="subtractButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JGe-bi-N4D"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zj7-B2-8c5" userLabel="0.=">
+                                        <rect key="frame" x="0.0" y="264" width="286" height="108"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWt-r7-BCE">
+                                                <rect key="frame" x="0.0" y="0.0" width="50.5" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="0"/>
+                                                <connections>
+                                                    <action selector="zeroButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NgM-gJ-jDs"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPX-SI-l2I">
+                                                <rect key="frame" x="78.5" y="0.0" width="50.5" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="."/>
+                                                <connections>
+                                                    <action selector="decimalButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P9V-KK-3u3"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ypb-4B-NPk" userLabel="Equal Button">
+                                                <rect key="frame" x="157" y="0.0" width="50.5" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="="/>
+                                                <connections>
+                                                    <action selector="equalButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6wY-4S-tYf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irK-vn-Ytf">
+                                                <rect key="frame" x="235.5" y="0.0" width="50.5" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                                <state key="normal" title="+"/>
+                                                <connections>
+                                                    <action selector="additionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FEq-gA-HOf"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jAl-yv-xzd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="912-P2-A78"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="53D-9a-VxK" secondAttribute="bottom" constant="22" id="GGj-WG-CRZ"/>
+                            <constraint firstItem="sQJ-Oh-3Wz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="L3O-pl-e0r"/>
+                            <constraint firstItem="53D-9a-VxK" firstAttribute="leading" secondItem="8OU-BW-C5m" secondAttribute="trailing" constant="18" id="Lze-TI-sfD"/>
+                            <constraint firstItem="PlG-s4-pvG" firstAttribute="centerX" secondItem="jAl-yv-xzd" secondAttribute="centerX" id="dRk-aC-xO3"/>
+                            <constraint firstItem="PlG-s4-pvG" firstAttribute="centerX" secondItem="sQJ-Oh-3Wz" secondAttribute="centerX" id="dmN-hC-OFe"/>
+                            <constraint firstItem="8OU-BW-C5m" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="fvE-VP-5G7"/>
+                            <constraint firstItem="PlG-s4-pvG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pTg-M1-ui9"/>
+                            <constraint firstItem="PlG-s4-pvG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="pzQ-bv-Cts"/>
+                            <constraint firstItem="8OU-BW-C5m" firstAttribute="top" secondItem="jAl-yv-xzd" secondAttribute="bottom" constant="16" id="q4Z-xB-Ruj"/>
+                            <constraint firstItem="PlG-s4-pvG" firstAttribute="top" secondItem="sQJ-Oh-3Wz" secondAttribute="top" id="tJT-TE-UvK"/>
+                            <constraint firstItem="PlG-s4-pvG" firstAttribute="bottom" secondItem="sQJ-Oh-3Wz" secondAttribute="bottom" id="udB-Ar-C5z"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -252,7 +269,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iWn-fA-4ZJ" id="oFn-dJ-dSi">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="Calculation" text="Calculation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s60-AR-blm">

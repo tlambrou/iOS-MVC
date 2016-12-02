@@ -17,7 +17,7 @@ class TableViewController: UITableViewController {
     return viewController.calculationArray.count
   }
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "calcLog") as! TableViewCell
+    let cell = tableView.dequeueReusableCell(withIdentifier: "calcExpression") as! TableViewCell
     let calculation = viewController.calculationArray[indexPath.row]
     cell.cellCalculation.text = calculation.printCalculation()
     return cell
