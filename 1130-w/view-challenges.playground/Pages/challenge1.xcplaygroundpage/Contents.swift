@@ -16,3 +16,25 @@ PlaygroundPage.current.liveView = canvas // make the canvas appear in the assist
  
  (Make sure to comment out the first implementation once you start working on the second one to avoid confusion.)
  */
+//// Implementation 1
+//let redWidth = canvas.frame.size.width / 2
+//let redHeight = canvas.frame.size.height / 2
+//let marginX = redWidth / 2
+//let marginY = redHeight / 2
+//let redDim = CGRect(x: marginX, y: marginY, width: redWidth, height: redHeight)
+//var redBox = UIView(frame: redDim)
+//redBox.backgroundColor = .red
+//
+//canvas.addSubview(redBox)
+
+// Implementation 2
+
+let redBox = UIView(frame: canvasFrame)
+redBox.backgroundColor = .red
+let margin = canvas.frame.width / 4
+
+NSLayoutConstraint(item: redBox, attribute: .height, relatedBy: .equal, toItem: canvas, attribute: .height, multiplier: 0.5, constant: 0)
+NSLayoutConstraint(item: redBox, attribute: .width, relatedBy: .equal, toItem: canvas, attribute: .width, multiplier: 0.5, constant: 0)
+NSLayoutConstraint(item: redBox, attribute: .leading, relatedBy: .equal, toItem: canvas, attribute: .leading, multiplier: 1, constant: margin)
+
+canvas.addSubview(redBox)

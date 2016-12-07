@@ -18,4 +18,23 @@ let colors: [UIColor] = [.green, .blue, .red]
  
  (Make sure to comment out the first implementation once you start working on the second one to avoid confusion.)
  */
+// Implementation 1
+
+let greenRect = CGRect(x: 0, y: 0, width: canvas.frame.size.width/3, height: canvas.frame.size.height)
+let greenView = UIView(frame: greenRect)
+greenView.backgroundColor = .green
+canvas.addSubview(greenView)
+
+let blueRect = CGRect(x: greenView.frame.maxX, y: 0, width: canvas.frame.size.width/3, height: canvas.frame.size.height)
+let blueView = UIView(frame: blueRect)
+blueView.backgroundColor = .blue
+canvas.addSubview(blueView)
+
+let redRect = CGRect(x: blueView.frame.maxX, y: 0, width: canvas.frame.size.width/3, height: canvas.frame.size.height)
+let redView = UIView(frame: redRect)
+redView.backgroundColor = .red
+canvas.addSubview(redView)
+
+// Implementation 2
+
 
