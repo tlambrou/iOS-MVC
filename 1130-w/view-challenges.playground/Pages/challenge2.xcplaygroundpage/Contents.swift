@@ -64,7 +64,7 @@ NSLayoutConstraint(item: redView2, attribute: .leading, relatedBy: .equal, toIte
 NSLayoutConstraint(item: redView2, attribute: .top, relatedBy: .equal, toItem: canvas, attribute: .top, multiplier: 1, constant: margin2).isActive = true
 NSLayoutConstraint(item: redView2, attribute: .bottom, relatedBy: .equal, toItem: canvas, attribute: .bottom, multiplier: 1, constant: margin2).isActive = true
 
-// Red 2
+// Red 3
 let redView3 = UIView(frame: CGRect.zero)
 redView3.translatesAutoresizingMaskIntoConstraints = false
 redView3.backgroundColor = .red
