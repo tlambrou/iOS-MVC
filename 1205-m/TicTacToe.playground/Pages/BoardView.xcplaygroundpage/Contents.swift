@@ -10,8 +10,6 @@ import PlaygroundSupport
 
 class BoardView: UIView {
   
-  
-  
   init(boardWidth: CGFloat, boardHeight: CGFloat) {
     
     var views = [UIView]()
@@ -20,27 +18,27 @@ class BoardView: UIView {
     
     super.init(frame: canvasFrame)
     
-    let canvas = UIView(frame: canvasFrame)
     
-    canvas.backgroundColor = .blue
+    
+    self.backgroundColor = .blue
     
     for i in 0..<9 {
       
       
-    
+      
       var x: CGFloat = 0
       var y: CGFloat = 0
-    
+      
       func setX () -> CGFloat {
         switch i {
         case 0, 3, 6:
-          x = CGFloat(0) * (canvas.frame.size.width / 3)
+          x = CGFloat(0) * (self.frame.size.width / 3)
           return x
         case 1, 4, 7:
-          x = CGFloat(1) * (canvas.frame.size.width / 3)
+          x = CGFloat(1) * (self.frame.size.width / 3)
           return x
         case 2, 5, 8:
-          x = CGFloat(2) * (canvas.frame.size.width / 3)
+          x = CGFloat(2) * (self.frame.size.width / 3)
           return x
         default:
           print("switch didn't work")
@@ -48,17 +46,17 @@ class BoardView: UIView {
           return x
         }
       }
-    
+      
       func setY () -> CGFloat {
         switch i {
         case 0, 1, 2:
-          y = CGFloat(0) * (canvas.frame.size.height / 3)
+          y = CGFloat(0) * (self.frame.size.height / 3)
           return y
         case 3, 4, 5:
-          y = CGFloat(1) * (canvas.frame.size.height / 3)
+          y = CGFloat(1) * (self.frame.size.height / 3)
           return y
         case 6, 7, 8:
-          y = CGFloat(2) * (canvas.frame.size.height / 3)
+          y = CGFloat(2) * (self.frame.size.height / 3)
           return y
         default:
           print("switch didn't work")
@@ -66,15 +64,16 @@ class BoardView: UIView {
           return y
         }
       }
-    
+      
       x = setX()
       y = setY()
-    
-      let frame = CGRect(x: x, y: y, width: canvas.frame.size.width/3, height: canvas.frame.size.height/3)
+      
+      let frame = CGRect(x: x, y: y, width: self.frame.size.width/3, height: self.frame.size.height/3)
       let view = UIView(frame: frame)
       view.backgroundColor = .white
+      view.layer.borderWidth = CGFloat(2)
       views.append(view)
-      canvas.addSubview(view)
+      self.addSubview(view)
     }
     
     
@@ -83,8 +82,14 @@ class BoardView: UIView {
   }
   
   init(fieldWidth: CGFloat, fieldHeight: CGFloat) {
-    var views = [UIView]()
     
+    var views = [UILabel]()
+    
+    let canvasFrame = CGRect(x: 0, y: 0, width: fieldWidth*3, height: fieldHeight*3)
+    
+    super.init(frame: canvasFrame)
+    
+    self.backgroundColor = .blue
     
     for i in 0..<9 {
       
@@ -131,19 +136,31 @@ class BoardView: UIView {
       y = setY()
       
       let frame = CGRect(x: x, y: y, width: fieldWidth, height: fieldHeight)
-      let view = UIView(frame: frame)
-      view.backgroundColor = .white
-      views.append(view)
-      canvas.addSubview(view)
-      super.init(frame: canvasFrame)
+      let label = UILabel(frame: frame)
       
-      let canvas = UIView(frame: canvasFrame)
+      label.backgroundColor = .white
+      views.append(label)
       
-      canvas.backgroundColor = .blue
-  }
+      label.layer.borderWidth = CGFloat(2)
+      
+      self.addSubview(label)
+      
+      
+      
+      
+    }
+    
+}
   
   required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
+    fatalError("init(coder:) has not been implemented")
   }
-  
 }
+
+
+let board = BoardView(boardWidth: CGFloat(500), boardHeight: CGFloat(460))
+//PlaygroundPage.current.liveView = board
+
+let board2 = BoardView(fieldWidth: 180, fieldHeight: 140)
+
+PlaygroundPage.current.liveView = board2
