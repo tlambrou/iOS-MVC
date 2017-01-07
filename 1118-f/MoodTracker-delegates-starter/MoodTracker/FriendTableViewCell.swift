@@ -17,6 +17,7 @@ class FriendTableViewCell: UITableViewCell {
 //  var moodTableViewController: MoodTableViewController!
   var delegate: FriendTableViewCellDelegate!
   
+  
   // outlets
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var moodDescriptionLabel: UILabel!

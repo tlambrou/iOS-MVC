@@ -135,22 +135,57 @@ class BoardView: UIView {
       x = setX()
       y = setY()
       
+      
+      
       let frame = CGRect(x: x, y: y, width: fieldWidth, height: fieldHeight)
       let label = UILabel(frame: frame)
       
       label.backgroundColor = .white
+      label.text = ""
+      label.font = UIFont(name: "Courier New", size: 160)
+      label.textAlignment = NSTextAlignment.center
       views.append(label)
       
       label.layer.borderWidth = CGFloat(2)
       
+      label.isUserInteractionEnabled = true
+      
       self.addSubview(label)
       
+      let boxTap = UITapGestureRecognizer(target: self, action: #selector(self.tap))
       
-      
+      label.addGestureRecognizer(boxTap)
       
     }
     
-}
+   
+    
+  }
+  
+  
+  var XO: Bool = true
+  
+  func tap(sender: UITapGestureRecognizer) {
+    
+    var label = (sender.view as! UILabel)
+    
+    var buffer = ""
+    
+    
+    if XO == true {
+      buffer = "X"
+      XO = false
+
+    } else if XO == false {
+      buffer = "O"
+      XO = true
+    }
+    
+    print(label.text)
+    
+    label.text = buffer
+    
+  }
   
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
@@ -158,9 +193,10 @@ class BoardView: UIView {
 }
 
 
-let board = BoardView(boardWidth: CGFloat(500), boardHeight: CGFloat(460))
+//
+//let board = BoardView(boardWidth: CGFloat(500), boardHeight: CGFloat(460))
 //PlaygroundPage.current.liveView = board
 
-let board2 = BoardView(fieldWidth: 180, fieldHeight: 140)
+let board2 = BoardView(fieldWidth: 180, fieldHeight: 180)
 
 PlaygroundPage.current.liveView = board2
